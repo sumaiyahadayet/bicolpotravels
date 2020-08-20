@@ -54,7 +54,7 @@
 <!-- begin:: Content Head -->
 <div class="kt-subheader   kt-grid__item d-print-none" id="kt_subheader">
     <div class="kt-subheader__main">
-        <h3 class="kt-subheader__title">Travels Group</h3>
+        <h3 class="kt-subheader__title">Public Group</h3>
 
         <span class="kt-subheader__separator kt-subheader__separator--v"></span>
 
@@ -98,7 +98,7 @@
                 <div class="kt-portlet__head-actions">
 
                     <div class="dropdown dropdown-inline">
-                        <a href="{{route('add-user_details')}}" class="btn btn-success btn-icon-sm ">
+                        <a href="{{route('add-group1')}}" class="btn btn-success btn-icon-sm ">
                             <i class="la la-plus"></i>
                             New Data
                         </a>
@@ -163,8 +163,8 @@
                     <td>{{$user->email}}</td>
 
                     <td>
-                     <a href="/admin/edit-user_details/{{$user->id}}" class="edit"><i class="la la-edit" data-toggle="tooltip" title="Edit"></i></a>
-                     <a href="/admin/delete-user_details/{{$user->id}}" class="delete"> <i class="la la-trash" data-toggle="tooltip" title="Delete"></i> </a>
+                     <a href="/admin/edit-group1/{{$user->id}}" class="edit"><i class="la la-edit" data-toggle="tooltip" title="Edit"></i></a>
+                     <a href="/admin/delete-group1/{{$user->id}}" class="delete"> <i class="la la-trash" data-toggle="tooltip" title="Delete"></i> </a>
                     </td>
 
 

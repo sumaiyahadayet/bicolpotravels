@@ -70,6 +70,15 @@ Route::get('/admin/client', function () {
 Route::get('/admin/emaild', function () {
     return view('admin.emaild.index');
 })->name('emaild');
+Route::get('/admin/change', function () {
+    return view('admin.change.index');
+})->name('change');
+Route::get('/admin/changei', function () {
+    return view('admin.changei.index');
+})->name('changei');
+Route::get('/admin/emaild', function () {
+    return view('admin.emaild.index');
+})->name('emaild');
 Route::get('/admin/user_details', function () {
     return view('admin.user_details.index');
 })->name('user_details');
@@ -202,3 +211,59 @@ Route::post('/admin/add-client', 'CLientController@AddCLient')->name('submit-add
 Route::get('/admin/edit-client/{id}', 'CLientController@Edit')->name('edit-client');
 Route::post('/admin/update-client', 'CLientController@Update')->name('update-client');
 Route::get('/admin/delete-client/{id}', 'CLientController@Delete')->name('dalete-client');
+
+Route::get('/admin/change', 'ChangeController@index')->name('change');
+Route::get('/admin/add-change', 'ChangeController@AddView')->name('add-change');
+Route::post('/admin/add-change', 'ChangeController@AddChange')->name('submit-add-change');
+Route::get('/admin/edit-change/{id}', 'ChangeController@Edit')->name('edit-change');
+Route::post('/admin/update-change', 'ChangeController@Update')->name('update-change');
+Route::get('/admin/delete-change/{id}', 'ChangeController@Delete')->name('dalete-change');
+
+Route::get('/admin/changei', 'ChangeiController@index')->name('changei');
+Route::get('/admin/add-changei', 'ChangeiController@AddView')->name('add-changei');
+Route::post('/admin/add-changei', 'ChangeiController@AddChangei')->name('submit-add-changei');
+Route::get('/admin/edit-changei/{id}', 'ChangeiController@Edit')->name('edit-changei');
+Route::post('/admin/update-changei', 'ChangeiController@Update')->name('update-changei');
+Route::get('/admin/delete-changei/{id}', 'ChangeiController@Delete')->name('dalete-changei');
+
+Route::get('/admin/group1', 'Group1Controller@index')->name('group1');
+Route::get('/admin/add-group1', 'Group1Controller@AddView')->name('add-group1');
+Route::post('/admin/add-group1', 'Group1Controller@AddGroup1')->name('submit-add-group1');
+Route::get('/admin/edit-group1/{id}', 'Group1Controller@Edit')->name('edit-group1');
+Route::post('/admin/update-group1', 'Group1Controller@Update')->name('update-group1');
+Route::get('/admin/delete-group1/{id}', 'Group1Controller@Delete')->name('dalete-group1');
+
+Route::get('/admin/group2', 'Group2Controller@index')->name('group2');
+Route::get('/admin/add-group2', 'Group2Controller@AddView')->name('add-group2');
+Route::post('/admin/add-group2', 'Group2Controller@AddGroup2')->name('submit-add-group2');
+Route::get('/admin/edit-group2/{id}', 'Group2Controller@Edit')->name('edit-group2');
+Route::post('/admin/update-group2', 'Group2Controller@Update')->name('update-group2');
+Route::get('/admin/delete-group2/{id}', 'Group2Controller@Delete')->name('dalete-group2');
+
+Route::get('/admin/group3', 'Group3Controller@index')->name('group3');
+Route::get('/admin/add-group3', 'Group3Controller@AddView')->name('add-group3');
+Route::post('/admin/add-group3', 'Group3Controller@AddGroup3')->name('submit-add-group3');
+Route::get('/admin/edit-group3/{id}', 'Group3Controller@Edit')->name('edit-group3');
+Route::post('/admin/update-group3', 'Group3Controller@Update')->name('update-group3');
+Route::get('/admin/delete-group3/{id}', 'Group3Controller@Delete')->name('dalete-group3');
+
+Route::get('/admin/group4', 'Group4Controller@index')->name('group4');
+Route::get('/admin/add-group4', 'Group4Controller@AddView')->name('add-group4');
+Route::post('/admin/add-group4', 'Group4Controller@AddGroup4')->name('submit-add-group4');
+Route::get('/admin/edit-group4/{id}', 'Group4Controller@Edit')->name('edit-group4');
+Route::post('/admin/update-group4', 'Group4Controller@Update')->name('update-group4');
+Route::get('/admin/delete-group4/{id}', 'Group4Controller@Delete')->name('dalete-group4');
+
+Route::get('/admin/group5', 'Group5Controller@index')->name('group5');
+Route::get('/admin/add-group5', 'Group5Controller@AddView')->name('add-group5');
+Route::post('/admin/add-group5', 'Group5Controller@AddGroup5')->name('submit-add-group5');
+Route::get('/admin/edit-group5/{id}', 'Group5Controller@Edit')->name('edit-group5');
+Route::post('/admin/update-group5', 'Group5Controller@Update')->name('update-group5');
+Route::get('/admin/delete-group5/{id}', 'Group5Controller@Delete')->name('dalete-group5');
+
+Route::get('/admin/group6', 'Group6Controller@index')->name('group6');
+Route::get('/admin/add-group6', 'Group6Controller@AddView')->name('add-group6');
+Route::post('/admin/add-group6', 'Group6Controller@AddGroup6')->name('submit-add-group6');
+Route::get('/admin/edit-group6/{id}', 'Group6Controller@Edit')->name('edit-group6');
+Route::post('/admin/update-group6', 'Group6Controller@Update')->name('update-group6');
+Route::get('/admin/delete-group6/{id}', 'Group6Controller@Delete')->name('dalete-group6');

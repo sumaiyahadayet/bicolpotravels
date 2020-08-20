@@ -81,6 +81,20 @@
                     </a>
                 </li>
                 <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true">
+                    <a href="{{route('change')}}" class="kt-menu__link">
+                        <span class="kt-menu__link-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect id="bound" x="0" y="0" width="24" height="24" />
+                                    <path d="M14,13.381038 L14,3.47213595 L7.99460483,15.4829263 L14,13.381038 Z M4.88230018,17.2353996 L13.2844582,0.431083506 C13.4820496,0.0359007077 13.9625881,-0.12427877 14.3577709,0.0733126292 C14.5125928,0.15072359 14.6381308,0.276261584 14.7155418,0.431083506 L23.1176998,17.2353996 C23.3152912,17.6305824 23.1551117,18.1111209 22.7599289,18.3087123 C22.5664522,18.4054506 22.3420471,18.4197165 22.1378777,18.3482572 L14,15.5 L5.86212227,18.3482572 C5.44509941,18.4942152 4.98871325,18.2744737 4.84275525,17.8574509 C4.77129597,17.6532815 4.78556182,17.4288764 4.88230018,17.2353996 Z"
+                                         id="Path-99" fill="#000000" fill-rule="nonzero" transform="translate(14.000087, 9.191034) rotate(-315.000000) translate(-14.000087, -9.191034) " />
+                                </g>
+                            </svg>
+                        </span>
+                        <span class="kt-menu__link-text">Change Flight</span>
+                    </a>
+                </li>
+                <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true">
                     <a href="{{route('pack')}}" class="kt-menu__link">
                         <span class="kt-menu__link-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
@@ -288,24 +302,32 @@
                     </a>
 
                 </li>
-                <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true">
-                    <a href="{{route('user_details')}}" class="kt-menu__link">
-                        <span class="kt-menu__link-icon">
 
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <rect id="bound" x="0" y="0" width="24" height="24" />
-                                    <path d="M3.5,21 L20.5,21 C21.3284271,21 22,20.3284271 22,19.5 L22,8.5 C22,7.67157288 21.3284271,7 20.5,7 L10,7 L7.43933983,4.43933983 C7.15803526,4.15803526 6.77650439,4 6.37867966,4 L3.5,4 C2.67157288,4 2,4.67157288 2,5.5 L2,19.5 C2,20.3284271 2.67157288,21 3.5,21 Z"
-                                         id="Combined-Shape" fill="#000000" opacity="0.3" />
-                                    <path d="M12,13 C10.8954305,13 10,12.1045695 10,11 C10,9.8954305 10.8954305,9 12,9 C13.1045695,9 14,9.8954305 14,11 C14,12.1045695 13.1045695,13 12,13 Z" id="Mask" fill="#000000" opacity="0.3" />
-                                    <path d="M7.00036205,18.4995035 C7.21569918,15.5165724 9.36772908,14 11.9907452,14 C14.6506758,14 16.8360465,15.4332455 16.9988413,18.5 C17.0053266,18.6221713 16.9988413,19 16.5815,19 C14.5228466,19 11.463736,19 7.4041679,19 C7.26484009,19 6.98863236,18.6619875 7.00036205,18.4995035 Z"
-                                         id="Mask-Copy" fill="#000000" opacity="0.3" />
-                                </g>
-                            </svg>
-                        </span>
-                        <span class="kt-menu__link-text" style="font-size:12px;">Email Users</span>
-                    </a>
 
+                <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--here" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle">
+
+						<div class="kt-demo-icon__preview">
+							<i class="fa fa-user-edit"style="font-size:18px; padding-right:10px;"></i>
+						</div>
+
+
+                     <span class="kt-menu__link-text">Email Users</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                    <div class="kt-menu__submenu " kt-hidden-height="200" style="display: none; overflow: hidden;"><span class="kt-menu__arrow"></span>
+                        <ul class="kt-menu__subnav">
+                            <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">Email Users</span></span></li>
+                            <li class="kt-menu__item " aria-haspopup="true"><a href="{{route('user_details')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Travels Group</span></a></li>
+                            <li class="kt-menu__item " aria-haspopup="true"><a href="{{route('group1')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Public Group</span></a></li>
+
+                            <li class="kt-menu__item " aria-haspopup="true"><a href="{{route('group2')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">International Group</span></a></li>
+
+                            <li class="kt-menu__item " aria-haspopup="true"><a href="{{route('group3')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Medical Group</span></a></li>
+
+                            <li class="kt-menu__item " aria-haspopup="true"><a href="{{route('group4')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Employee Group</span></a></li>
+                            <li class="kt-menu__item " aria-haspopup="true"><a href="{{route('group5')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Corporate Group</span></a></li>
+                            <li class="kt-menu__item " aria-haspopup="true"><a href="{{route('group6')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Others</span></a></li>
+
+                        </ul>
+                    </div>
                 </li>
                 <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true">
                     <a href="{{route('emaild')}}" class="kt-menu__link">

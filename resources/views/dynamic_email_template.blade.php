@@ -104,7 +104,9 @@
                 width: 100% !important;
             }
             .logop {
-                margin-left: 170px!important;
+                margin-left: 110px!important;
+               font-size: 15px!important;
+
            }
             .logo img{
                 width: 22%;
@@ -170,11 +172,11 @@
                     <table cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#ffffff" width="600" class="email-container logo">
                         <tr>
 
-                            <td style="display: inline-flex; padding: 8px; text-align: left; font-family: sans-serif; font-size: 12px; mso-height-rule: exactly; line-height: 20px; color: #555555; display: -webkit-inline-box;" class="logo">
+                            <td style="display: inline-flex; padding: 4px; text-align: left; font-family: sans-serif; font-size: 12px; mso-height-rule: exactly; line-height: 5px; color: #000000; display: -webkit-inline-box;" class="logo">
 
-                                <img src="{{asset('assets/images/bicolpo-logo-transparent.png')}}" width="13%" height=auto; alt="alt_text" border="0" style="display:flex;">
-                              <p class="logop" style="text-align :center;  margin-left:400px;"> <strong> Bicolpo Travels<br>
-                                   <i style="font-family:initial;"> A Different Feel</i></strong></p>
+                                <img src="{{asset('assets/images/bicolpo-logo-transparent.png')}}" width="15%" height=auto; alt="alt_text" border="0" style="display:flex;">
+                              <p class="logop" style="text-align :center;  margin-left:350px; font-size:20px;"> <strong> Bicolpo Travels<br>
+                                   <i style="font-family:initial;display: block;  padding-top:18px; font-size:18px;"> A Different Feel</i></strong></p>
                             </td>
                         </tr>
                     </table>
@@ -198,8 +200,8 @@
                         <!-- 1 Column Text : BEGIN -->
                         <tr>
                             <td style="padding: 30px; text-align: left; font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555;">
-                                 <h1 style="padding: 0px; text-align: left; color:black; background-color:white;"> {{$data['headline']}}
-                                 </h1><br>
+                                 <h2 style=" line-height: 1.5;padding: 0px; text-align: left; color:black; background-color:white;"> {{$data['headline']}}
+                                 </h2>
                                 Dear {{$user->name}},<br><br>
 
 

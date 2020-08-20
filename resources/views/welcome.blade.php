@@ -16,6 +16,7 @@
 
 
 
+
 <div id="home">
     <div id="myCarousel" class="carousel " data-ride="carousel" data-interval="8000">
         <!-- Indicators -->
@@ -35,8 +36,9 @@
                         <h2 class="animated fadeInUp">{{$banner->title}}</h2>
                         <p> {{$banner->caption}}</p>
                     </div>
-                    <img class="banner-image" src="{{asset($banner->image)}}" alt="Los Angeles" style="width:1682px;height:500px;">
-
+                    <div class="banner-image">
+                        <img src="{{asset($banner->image)}}" alt="Los Angeles" style="width:1682px;height:500px;">
+                    </div>
                 </div>
                 @else
                 <div class="item">
@@ -44,8 +46,9 @@
                         <h2 class="animated fadeInUp">{{$banner->title}}</h2>
                         <p>{{$banner->caption}}</p>
                     </div>
-                    <img class="banner-image" src="{{asset($banner->image)}}" alt="Chicago" style="width:1682px;height:500px;">
-
+                    <div class="banner-image">
+                        <img src="{{asset($banner->image)}}" alt="Los Angeles" style="width:1682px;height:500px;">
+                    </div>
                 </div>
                 @endif
                 @endforeach
@@ -72,14 +75,18 @@
 <div class="container ">
     <div class="col-xs-12 tab-panels">
         <ul class=" tabs">
-            <li rel="panel1" class="col-sm-6 col-md-3 col-xs-6 active"><i class="fa fa-plane" aria-hidden="true"></i>Search Flights</li>
-            <li rel="panel4" class="col-sm-6 col-md-3 col-xs-6"><i class="fa fa-ticket" aria-hidden="true"></i>Change Flight</li>
-            <li rel="panel2" class="col-sm-6 col-md-3 col-xs-6"><i class="fa fa-hotel" aria-hidden="true"></i>Hotel Booking</li>
-            <li rel="panel3" class="col-sm-6 col-md-3 col-xs-6"><img src="/assets/images/umbrella beach.png" style="height:22px; width=auto;"> Holidays</li>
+            <li href="#panel1" data-toggle="tab" class="col-sm-6 col-md-3 col-xs-6 "><i class="fa fa-plane" aria-hidden="true"></i>Search Flights</li>
+            <li href="#panel4" data-toggle="tab" class="col-sm-6 col-md-3 col-xs-6 active"><i class="fa fa-ticket" aria-hidden="true"></i>Change Flight</li>
+            <li href="#panel2" data-toggle="tab" class="col-sm-6 col-md-3 col-xs-6"><i class="fa fa-hotel" aria-hidden="true"></i>Hotel Booking</li>
+            <li href="#panel3" onclick="RefreshSlider()" data-toggle="tab" class="col-sm-6 col-md-3 col-xs-6"><img src="/assets/images/umbrella beach.png" style="height:22px; width=auto;"> Holidays</li>
 
         </ul>
 
-        <div id="panel1" class="col-xs-12 panel active">
+        <div class="tab-content clearfix">
+
+        </div>
+
+        <div id="panel1" class="col-xs-12 panel tab-pane">
             <h5 class="text-center">Thanks for Choosing BICOLPO TRAVELS. Search here for CHEAPEST fare;</h5>
             <h6 class="text-center">You will be redirected to our Booking Engine</h6>
 
@@ -137,209 +144,188 @@
                 </div>
             </div>
         </div>
-        <div id="panel4" class="col-xs-12 panel">
-            content4<br /> content4
-            <br /> content4
-            <br /> content4
-            <br /> content4
-            <br />
-        </div>
-        <div id="panel2" class="col-xs-12 panel">
-            <h5 class="text-center">Find Cheap Hotels and Save Now</h5>
-            <h6 class="text-center">You will be redirected to our Booking Engine</h6>
-
-            <div class="row">
-                <div class="col-md-12 search-engine">
-                    <div class="row">
-                        <div class="col-md-3 col-xs-6">
-                            <a href="http://makeanytrips.com/">
-                                <button class="btn btn-default raise from-where">
-                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                    <p> Destination</p>
-                                </button>
-                            </a>
-                        </div>
-
-
-                        <div class="col-md-2 col-xs-6">
-                            <a href="http://makeanytrips.com/">
-                                <button class="btn btn-default raise">
-                                    <i class="fa fa-calendar" aria-hidden="true"></i>
-                                    <p> Check-in</p>
-                                </button>
-                            </a></div>
-                        <div class="col-md-2 col-xs-6">
-                            <a href="http://makeanytrips.com/">
-                                <button class="btn btn-default raise">
-                                    <i class="fa fa-calendar" aria-hidden="true"></i>
-                                    <p> Check-out</p>
-                                </button>
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-xs-6">
-                            <a href="http://makeanytrips.com/">
-                                <button class="btn btn-default raise">
-                                    <i class="fa fa-hotel" aria-hidden="true"></i>
-                                    <p> Traveler</p>
-                                </button>
-                            </a></div>
-                        <div class="col-md-2 col-xs-12">
-                            <a href="http://makeanytrips.com/">
-                                <button class="btn btn-default flight2">
-
-                                    <p> Search Hotel</p>
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
+        <div id="panel4" class="col-xs-12 panel tab-pane active" style="padding:0px!important;">
+            <div class="change-caption">
+                {{-- @foreach(Change() as $change)
+                <div class="slides animated fadeInRight first">
+                    <h3>{{$change->title}}</h3>
+                <p>{{$change->caption}}</p>
             </div>
-        </div>
-        <div id="panel3" class="col-xs-12 panel">
-            <div class="Container">
-                <h3 class="Head"><strong>Domestic Packages</strong> <span class="Arrows"></span></h3>
-                <!-- Carousel Container -->
-                <div class="SlickCarousel">
-                    <!-- Item -->
-                    @foreach (Dompack() as $dompack)
+            @endforeach --}}
+
+            {{-- <div class="slides animated fadeInRight"><h3>Be yourself 1</h3><p>pppppp2</p></div>
+  <div class="slides animated fadeInRight"><h3>Be yourself  2</h3><p>pppppp3</p></div> --}}
+            <div id="myCarousel" class="carousel" data-ride="carousel" data-interval="8000">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    @foreach(Change() as $change)
+                    @if($change->order==1)
+                        <div class="item active ">
+                            <div class="animated fadeInRight">
+                                <h3>{{$change->title}}</h3>
+                                <p>{{$change->caption}}</p>
+                            </div>
 
 
-                    <div class="ProductBlock">
-                        <div class="Content">
-                            <div class="img-fill">
-                                <img src="{{asset($dompack->image)}}">
-                            </div>
-                            <h3>{{$dompack->title}}
-                                <a href="{{asset($dompack->link)}}"> <button class=" read-more-button text-center">Learn More</button></a></h3>
                         </div>
-                    </div>
-                    @endforeach
-                    <!-- Item -->
-                    <!-- Item -->
-                    {{-- <div class="ProductBlock">
-                        <div class="Content">
-                            <div class="img-fill">
-                                <img src="https://41.media.tumblr.com/4f61413965b53d9cc901e2f8241a64bd/tumblr_nh1zmuXYUM1su4a4ho1_1280.jpg">
-                            </div>
-                            <h3>Block Title<a href="#"> <button class=" read-more-button text-center">Learn More</button></a></h3>
-                        </div>
-                    </div>
-                    <!-- Item -->
-                    <!-- Item -->
-                    <div class="ProductBlock">
-                        <div class="Content">
-                            <div class="img-fill">
-                                <img src="https://41.media.tumblr.com/4f61413965b53d9cc901e2f8241a64bd/tumblr_nh1zmuXYUM1su4a4ho1_1280.jpg">
+                        @else
+                        <div class="item  ">
+                            <div class="animated fadeInRight">
+                                <h3>{{$change->title}}</h3>
+                                <p>{{$change->caption}}</p>
                             </div>
 
-                            <h3>Block Title
-                                <a href="#"> <button class=" read-more-button text-center">Learn More</button></a></h3>
-                        </div>
-                    </div>
-                    <!-- Item -->
-                    <!-- Item -->
-                    <div class="ProductBlock">
-                        <div class="Content">
-                            <div class="img-fill">
-                                <img src="https://41.media.tumblr.com/4f61413965b53d9cc901e2f8241a64bd/tumblr_nh1zmuXYUM1su4a4ho1_1280.jpg">
-                            </div>
-                            <h3>Block Title
-                                <a href="#"> <button class=" read-more-button text-center">Learn More</button></a>
-                            </h3>
-                        </div>
-                    </div>
-                    <!-- Item -->
-                    <!-- Item -->
-                    <div class="ProductBlock">
-                        <div class="Content">
-                            <div class="img-fill">
-                                <img src="https://41.media.tumblr.com/4f61413965b53d9cc901e2f8241a64bd/tumblr_nh1zmuXYUM1su4a4ho1_1280.jpg">
 
-                            </div>
-                            <h3>Block Title
-                                <a href="#"> <button class=" read-more-button text-center">Learn More</button></a>
-                            </h3>
                         </div>
-                    </div> --}}
-                    <!-- Item -->
-                </div>
-                <!-- Carousel Container -->
+                        @endif
+                        @endforeach
+
+                        {{-- <div class="item">
+              <div class="carousel-caption">
+                  <h2 class="animated fadeInUp">Change your Existing Ticket</h2>
+                  <p>Existing ticket you have of any airlines can be easily changed through us. </p>
+              </div>
+              <img class="banner-image" src="{{asset('assets/images/banner-3.jpg')}}" alt="New york" style="width:1682px;height:500px;">
+
+                </div> --}}
             </div>
-            <div class="Container2">
-                <h3 class="Head2"><strong>International Packages</strong> <span class="Arrows2"></span></h3>
-                <!-- Carousel Container -->
-                <div class="SlickCarousel2">
-                    <!-- Item -->
-                    @foreach (Intpack() as $intpack)
-                    <div class="ProductBlock2">
-                        <div class="Content2">
-                            <div class="img-fill2">
-                                <img src="{{asset($intpack->image)}}">
-                            </div>
 
-                            <h3>{{$intpack->title}}
-                                <a href="{{asset($intpack->link)}}"> <button class=" read-more-button text-center">Learn More</button></a></h3>
-                        </div>
-                    </div>
-                    <!-- Item -->
-                    <!-- Item -->
-                    {{-- <div class="ProductBlock2">
-                        <div class="Content2">
-                            <div class="img-fill2">
-                                <img src="https://41.media.tumblr.com/4f61413965b53d9cc901e2f8241a64bd/tumblr_nh1zmuXYUM1su4a4ho1_1280.jpg">
-                            </div>
+            <!-- Left and right controls -->
 
-                            <h3>Block Title
-                                <a href="#"> <button class=" read-more-button text-center">Learn More</button></a></h3>
-                        </div>
-                    </div>
-                    <!-- Item -->
-                    <!-- Item -->
-                    <div class="ProductBlock2">
-                        <div class="Content2">
-                            <div class="img-fill2">
-                                <img src="https://41.media.tumblr.com/4f61413965b53d9cc901e2f8241a64bd/tumblr_nh1zmuXYUM1su4a4ho1_1280.jpg">
-                            </div>
-
-                            <h3>Block Title
-                                <a href="#"> <button class=" read-more-button text-center">Learn More</button></a></h3>
-                        </div>
-                    </div>
-                    <!-- Item -->
-                    <!-- Item -->
-                    <div class="ProductBlock2">
-                        <div class="Content2">
-                            <div class="img-fill2">
-                                <img src="https://41.media.tumblr.com/4f61413965b53d9cc901e2f8241a64bd/tumblr_nh1zmuXYUM1su4a4ho1_1280.jpg">
-                            </div>
-
-                            <h3>Block Title
-                                <a href="#"> <button class=" read-more-button text-center">Learn More</button></a>
-                            </h3>
-                        </div>
-                    </div>
-                    <!-- Item -->
-                    <!-- Item -->
-                    <div class="ProductBlock2">
-                        <div class="Content2">
-                            <div class="img-fill2">
-                                <img src="https://41.media.tumblr.com/4f61413965b53d9cc901e2f8241a64bd/tumblr_nh1zmuXYUM1su4a4ho1_1280.jpg">
-                            </div>
-
-                            <h3>Block Title
-                                <a href="#"> <button class=" read-more-button text-center">Learn More</button></a></h3>
-                        </div>
-                    </div> --}}
-                    <!-- Item -->
-               @endforeach
-                </div>
-                <!-- Carousel Container -->
-            </div>
         </div>
-
-
     </div>
+
+    <div class="change-button">
+        <a href="#" style="font-size:18px;"> Learn More</a>
+
+        <a href="#" style=""class="btn animated-button1" data-toggle="modal" data-target=".bd-example-modal-lg">
+
+             <span></span>
+               <span></span>
+               <span></span>
+               <span></span>
+               Change Now
+        </a>
+    </div>
+    @foreach(Changei() as $changei)
+    <div class="change-flight">
+        <img class="change-flight" src="{{asset($changei->image)}}" alt="Chicago" style="width:1132px;height:400px;">
+    </div>
+    @endforeach
+</div>
+<div id="panel2" class="col-xs-12 panel tab-pane">
+    <h5 class="text-center">Find Cheap Hotels and Save Now</h5>
+    <h6 class="text-center">You will be redirected to our Booking Engine</h6>
+
+    <div class="row">
+        <div class="col-md-12 search-engine">
+            <div class="row">
+                <div class="col-md-3 col-xs-6">
+                    <a href="http://makeanytrips.com/">
+                        <button class="btn btn-default raise from-where">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <p> Destination</p>
+                        </button>
+                    </a>
+                </div>
+
+
+                <div class="col-md-2 col-xs-6">
+                    <a href="http://makeanytrips.com/">
+                        <button class="btn btn-default raise">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                            <p> Check-in</p>
+                        </button>
+                    </a></div>
+                <div class="col-md-2 col-xs-6">
+                    <a href="http://makeanytrips.com/">
+                        <button class="btn btn-default raise">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                            <p> Check-out</p>
+                        </button>
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <a href="http://makeanytrips.com/">
+                        <button class="btn btn-default raise">
+                            <i class="fa fa-hotel" aria-hidden="true"></i>
+                            <p> Traveler</p>
+                        </button>
+                    </a></div>
+                <div class="col-md-2 col-xs-12">
+                    <a href="http://makeanytrips.com/">
+                        <button class="btn btn-default flight2">
+
+                            <p> Search Hotel</p>
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="panel3" class="col-xs-12 panel  tab-pane">
+    <div class="loading"></div>
+    <div class="Container ">
+
+
+        <h3 class="Head"><strong>Domestic Packages</strong><span class="Arrows"></h3>
+        <!-- Carousel Container -->
+        <div class="custom-slider2">
+            @foreach (Dompack() as $dompack)
+
+
+            <div class="ProductBlock">
+                <div class="Content">
+
+                    <div class="img-fill" onload="myFunction()">
+
+                        <img src="{{asset($dompack->image)}}" alt="assets/images/loader.gif">
+                    </div>
+                    <h3>{{$dompack->title}}
+                        <a href="{{asset($dompack->link)}}"> <button class=" read-more-button text-center">Learn More</button></a></h3>
+                </div>
+            </div>
+            @endforeach
+
+        </div>
+
+        <!-- Carousel Container -->
+    </div>
+    <div class="Container2">
+        <h3 class="Head2"><strong>International Packages</strong> <span class="Arrows2"></span></h3>
+        <!-- Carousel Container -->
+        <div class="custom-slider3 ">
+            <!-- Item -->
+            @foreach (Intpack() as $intpack)
+            <div class="ProductBlock2">
+                <div class="Content2">
+                    <div class="img-fill2">
+                        <img src="{{asset($intpack->image)}}">
+                    </div>
+
+                    <h3>{{$intpack->title}}
+                        <a href="{{asset($intpack->link)}}"> <button class=" read-more-button text-center">Learn More</button></a></h3>
+                </div>
+            </div>
+
+            @endforeach
+        </div>
+        <!-- Carousel Container -->
+    </div>
+</div>
+
+
+</div>
 
 </div>
 </div>
@@ -439,23 +425,7 @@
                         </li>
                         @endif
                         @endforeach
-                        {{-- <li>
-                        <img src="{{asset('assets/images/event3.jpg')}}" title="" alt="">
 
-                        <div class="caption">
-                            <h2 class="slider-title">Identidad Corporativa</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dicta laudantium voluptatem minima! Dolorum tempore dolores excepturi omnis provident. Commodi quis aperiam maiores, dolore a perferendis!</p>
-                        </div>
-                        </li>
-
-                        <li>
-                            <img src="{{asset('assets/images/event1.jpg')}}" title="" alt="">
-
-                            <div class="caption">
-                                <h2 class="slider-title">Desarrollo Web</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolore dignissimos laudantium.</p>
-                            </div>
-                        </li> --}}
                 </ul>
                 <!-- Sombras -->
                 <div class="slider-shadow"></div>
@@ -491,23 +461,7 @@
                         @endif
                         @endforeach
 
-                        {{-- <li>
-                        <img src="{{asset('assets/images/event3.jpg')}}" title="" alt="">
 
-                        <div class="caption">
-                            <h2 class="slider-title">Identidad Corporativa</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dicta laudantium voluptatem minima! Dolorum tempore dolores excepturi omnis provident. Commodi quis aperiam maiores, dolore a perferendis!</p>
-                        </div>
-                        </li>
-
-                        <li>
-                            <img src="{{asset('assets/images/event1.jpg')}}" title="" alt="">
-
-                            <div class="caption">
-                                <h2 class="slider-title">Desarrollo Web</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolore dignissimos laudantium.</p>
-                            </div>
-                        </li> --}}
                 </ul>
                 <!-- Sombras -->
                 <div class="slider-shadow"></div>
@@ -527,27 +481,18 @@
 </div>
 <br><br>
 <div class="workwith">
-<div class="custom-slider">
-     @foreach (CLient() as $client)
+    <div class="custom-slider">
+        @foreach (CLient() as $client)
 
 
-  <div class="custom-box">
-       <a href="{{asset($client->link)}}">
-      <img src="{{asset($client->image)}}">
-</a>
-  </div>
-  @endforeach
-  {{-- <div class="custom-box"> <img src="https://41.media.tumblr.com/4f61413965b53d9cc901e2f8241a64bd/tumblr_nh1zmuXYUM1su4a4ho1_1280.jpg"></div>
-  <div class="custom-box">
-        <img src="https://41.media.tumblr.com/4f61413965b53d9cc901e2f8241a64bd/tumblr_nh1zmuXYUM1su4a4ho1_1280.jpg">
-  </div>
-  <div class="custom-box"> <img src="https://41.media.tumblr.com/4f61413965b53d9cc901e2f8241a64bd/tumblr_nh1zmuXYUM1su4a4ho1_1280.jpg"></div>
-  <div class="custom-box"> <img src="https://41.media.tumblr.com/4f61413965b53d9cc901e2f8241a64bd/tumblr_nh1zmuXYUM1su4a4ho1_1280.jpg"></div>
-  <div class="custom-box"> <img src="https://41.media.tumblr.com/4f61413965b53d9cc901e2f8241a64bd/tumblr_nh1zmuXYUM1su4a4ho1_1280.jpg"></div>
-  <div class="custom-box"> <img src="https://41.media.tumblr.com/4f61413965b53d9cc901e2f8241a64bd/tumblr_nh1zmuXYUM1su4a4ho1_1280.jpg"></div>
-  <div class="custom-box"> <img src="https://41.media.tumblr.com/4f61413965b53d9cc901e2f8241a64bd/tumblr_nh1zmuXYUM1su4a4ho1_1280.jpg"></div>
-  <div class="custom-box"> <img src="https://41.media.tumblr.com/4f61413965b53d9cc901e2f8241a64bd/tumblr_nh1zmuXYUM1su4a4ho1_1280.jpg"></div> --}}
-</div>
+        <div class="custom-box">
+            <a href="{{asset($client->link)}}">
+                <img src="{{asset($client->image)}}">
+            </a>
+        </div>
+        @endforeach
+
+    </div>
 </div>
 <div id="about-us">
     {{-- <br>
@@ -673,7 +618,7 @@
 
                     <p class="card-text text-center">{{$support->description}} <span id="text{{$support->order}}">{{$support->descriptionb}} <br></p>
                     </span>
-                    <button id="toggle{{$support->order}}" class="btn btn-primary text-center">Read More</button>
+                    <button id="toggle{{$support->order}}" onclick="ReadMore({{$support->order}})" class="btn btn-primary text-center">Read More</button>
 
 
 
@@ -693,7 +638,7 @@
 
                     <p class="card-text text-center">{{$support->description}} <span id="text{{$support->order}}">{{$support->descriptionb}} <br></p>
                     </span>
-                    <button id="toggle{{$support->order}}" class="btn btn-primary text-center">Read More</button>
+                    <button id="toggle{{$support->order}}" onclick="ReadMore({{$support->order}})" class="btn btn-primary text-center">Read More</button>
 
 
 
@@ -718,6 +663,8 @@
     <br>
     <p>aaa</p> --}}
 </div>
+
+
 
 
 <div class="row title-gap">
@@ -747,94 +694,8 @@
             </div><!-- /.team -->
         </div>
         @endforeach
-        {{-- <div class="col-md-4 col-sm-4">
-            <div class="team">
-                <div class="team-image">
 
-                    <img src="{{asset('assets/images/profile-avater.png')}}" class="img-circle img-responsive">
-
-
-    </div><!-- /.team-image -->
-    <div class="team-content">
-        <div class="team-name text-center"><a href="#">
-                <h5>Jose Knutson</h5>
-            </a></div>
-        <div class="team-role text-center">Co-founder</div>
-
-    </div><!-- /.team-content -->
-</div><!-- /.team -->
-</div>
-<div class="col-md-4 col-sm-4">
-    <div class="team">
-        <div class="team-image">
-
-            <img src="{{asset('assets/images/profile-avater.png')}}" class="img-circle img-responsive">
-
-
-        </div><!-- /.team-image -->
-        <div class="team-content">
-            <div class="team-name text-center"><a href="#">
-                    <h5>Jose Knutson</h5>
-                </a></div>
-            <div class="team-role text-center">Co-founder</div>
-
-        </div><!-- /.team-content -->
-    </div><!-- /.team -->
-</div>
-</div>
-<div class="row title-gap">
-    <div class="col-md-4 col-sm-4">
-        <div class="team">
-            <div class="team-image">
-
-                <img src="{{asset('assets/images/profile-avater.png')}}" class="img-circle img-responsive">
-
-
-            </div><!-- /.team-image -->
-            <div class="team-content">
-                <div class="team-name text-center"><a href="#">
-                        <h5>Jose Knutson</h5>
-                    </a></div>
-                <div class="team-role text-center">Co-founder</div>
-
-            </div><!-- /.team-content -->
-        </div><!-- /.team -->
     </div>
-    <div class="col-md-4 col-sm-4">
-        <div class="team">
-            <div class="team-image">
-
-                <img src="{{asset('assets/images/profile-avater.png')}}" class="img-circle img-responsive">
-
-
-            </div><!-- /.team-image -->
-            <div class="team-content">
-                <div class="team-name text-center"><a href="#">
-                        <h5>Jose Knutson</h5>
-                    </a></div>
-                <div class="team-role text-center">Co-founder</div>
-
-            </div><!-- /.team-content -->
-        </div><!-- /.team -->
-    </div>
-    <div class="col-md-4 col-sm-4">
-        <div class="team">
-            <div class="team-image">
-
-                <img src="{{asset('assets/images/profile-avater.png')}}" class="img-circle img-responsive">
-
-
-            </div><!-- /.team-image -->
-            <div class="team-content">
-                <div class="team-name text-center"><a href="#">
-                        <h5>Jose Knutson</h5>
-                    </a></div>
-                <div class="team-role text-center">Co-founder</div>
-
-            </div><!-- /.team-content -->
-        </div><!-- /.team -->
-    </div>--}}
-</div>
 </div>
 <br>
 
@@ -855,17 +716,7 @@
 
     <div class="container service-main-container">
         <div class="row service-image-row">
-            {{-- <div class="col-md-4"> --}}
 
-
-            {{-- </div> --}}
-            {{-- <div class="col-md-4"> --}}
-
-
-            {{-- </div> --}}
-            {{-- <div class="col-md-4"> --}}
-
-            {{-- </div> --}}
         </div>
 
         <div class="row">
@@ -884,35 +735,10 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="col-md-4">
-                <img class="service-main-image" src="{{asset('assets/images/creative-comunications.png')}}" alt="Los Angeles">
-            <div class="box">
-                <div class="service-content">
-                    <h2 class="text-center">2</h2>
-                    <h3 class="text-center">ICT Training</h3><br>
-                    <p>
-                        Now a days ICT Knowledge is the most important Think in Modern era. We Take Care about it. We Provide 6 & 3 Months Computer Training in Rural Area at very low cost.
-                    </p>
-                    <a href="#">Read more</a>
-                </div>
-            </div>
+
+            @endforeach
         </div>
-        <div class="col-md-4">
-            <img class="service-main-image" src="{{asset('assets/images/electronic.jpg')}}" alt="New york">
-            <div class="box">
-                <div class="service-content">
-                    <h2 class="text-center">3</h2>
-                    <h3 class="text-center">Electronics</h3><br>
-                    <p>
-                        LET TV, CC CAMERA, Rice cooker, Electric Iron, Blender, Led Bulb, Electric Cattle, Computer Accessories like Toner, Keyboard, Mouse, Power Supply Etc.
-                    </p>
-                    <a href="#">Read more</a>
-                </div>
-            </div>
-        </div> --}}
-        @endforeach
     </div>
-</div>
 </div>
 
 <div id="contact-us">
@@ -976,6 +802,7 @@
                             <a href="#" title="Style Builder" class="anchor btn btn-default" style="background: skyblue; border: #bb7824;"> <i class="fa fa-paper-plane" aria-hidden="true"></i>  Explore More </a>
                         </div>
                     </div>
+
                     <div class="space"></div>
                 </div>
             </div>
@@ -1010,6 +837,72 @@
         <a href="">About Us</a> | <a href=""> Privacy Policy </a> | <a href=""> Terms and Conditions </a> | <a href=""> Disclaimer Policy</a> | <a href=""> Payment and Refund Policy</a> |<a href=""> FAQ</a>
     </div>
 </div>
+<div class="modal fade bd-example-modal-lg"id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true" style="font-size:50px;">&times;</span>
+           </button>
+           <img src="{{asset('assets/images/plane.gif')}}" style="height:200px; width:auto;">
+        <h5 class="modal-title text-center" id="exampleModalLabel">! THANK YOU FOR CHOOSING US !<br>
+             Change your Ticket with easy 04 steps
+</h5><br>
+
+<p class="text-center">Currently for any kind of changes send us your Ticket, Passport and Visa copy with expected Date at below emails. . </p>
+<div class="modal-mail">
+<a href="mailto:sales@bicolpotravels.com" class="text-center">sales@bicolpotravels.com</a><br>
+<span class="text-center">or </span><br>
+<a href="mailto:bcbd14@gmail.com"class="text-center">bcbd14@gmail.com</a>
+</div>
+      </div>
+      <div class="modal-body">
+           <div id="main-container">
+          <dl>
+            <dt class="done-item"></dt>
+            <dd class="done-item-text">
+              <h2>Step 1</h2>
+              <p>Attach your ticket, passport and visa on email, mention expected Date on email subject field, then send it to above email address.
+</p>
+            </dd>
+            <dt class="done-item"></dt>
+            <dd class="done-item-text">
+              <h2>Step 2</h2>
+              <p>Within 01 to 24 hours you will get replay of your email with available possible date and exact Fare how much you have to pay.</p>
+            </dd>
+            <dt class="done-item"></dt>
+            <dd class="done-item-text">
+              <h2>Step 3</h2>
+              <p>If you Agree with Date and Fares Just replay on the same email as like ”I am Agree Please Confirm ……Date”,
+</p>
+            </dd>
+            <dt class="done-item"></dt>
+            <dd class="done-item-text">
+              <h2>Step 4</h2>
+              <p>If Balance available on your ledger you will get reissuance within few min/hours. If not available balance we will send a link for payment, after successful  payment you will get your service on the same email.
+<br>
+<br>Any further Assistance don’t hesitate to call us @ +8801718128917,   Whatsapp: +8801718128917, also can contact with chat option on our website</p>
+            </dd>
+              </div>
+
+            </dd>
+          </dl>
+          </div>
+
+      <div class="modal-footer">
+           <div class="modal-icon float-left">
+<a href="https://www.facebook.com/bicolpotravels" class="fa fa-facebook"></a>
+<a href="https://join.skype.com/invite/P6q9ig1G7KaR" class="fa fa-skype"></a>
+<a href="mailto:sales@bicolpotravels.com" class="fa fa-envelope"></a>
+
+</div>
+<button  data-dismiss="modal" aria-label="Close" class=" btn btn-default" >Close</button>
+
+</div>
+    </div>
+  </div>
+</div>
 <div class="footer">
 
     <div class="row">
@@ -1023,8 +916,142 @@
         <!--right-->
     </div>
 </div>
+<div id="fb-root"></div>
 
+
+     <!-- Your Chat Plugin code -->
+     <div class="fb-customerchat"
+       attribution=setup_tool
+       page_id="231458127041599">
+     </div>
 
 <!-- https://codepen.io/vilcu/pen/ZQwdGQ -->
+
+@endsection
+
+@section('js')
+
+
+
+<script>
+    var count = 0;
+
+    function RefreshSlider() {
+
+        if (count < 1) {
+
+
+            $('.custom-slider2').slick({
+                slidesToShow: 3,
+                appendArrows: $(".Container .Head .Arrows"),
+
+                // Class For Arrows Buttons
+                prevArrow: '<span class="Slick-Prev"></span>',
+                nextArrow: '<span class="Slick-Next"></span>',
+
+                easing: "linear",
+                slidesToScroll: 3,
+                infinite: true,
+                autoplay: true,
+
+                autoplaySpeed: 4000,
+                responsive: [{
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                            dots: false
+                        }
+                    },
+                    {
+                        breakpoint: 900,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: false
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: false
+                        }
+                    },
+                    {
+                        breakpoint: 350,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: false
+                        }
+                    },
+
+
+                ]
+            });
+            $('.custom-slider3').slick({
+                slidesToShow: 3,
+                appendArrows: $(".Container2 .Head2 .Arrows2"),
+                // Class For Arrows Buttons
+                prevArrow: '<span class="Slick-Prev2"></span>',
+                nextArrow: '<span class="Slick-Next2"></span>',
+                easing: "linear",
+                slidesToScroll: 3,
+                infinite: true,
+                autoplay: true,
+
+                autoplaySpeed: 4000,
+                responsive: [{
+                        breakpoint: 1200,
+                        settings: {
+                           slidesToShow: 3,
+                           slidesToScroll: 3,
+                           infinite: true,
+                           dots: false
+                        }
+                    },
+                    {
+                        breakpoint: 900,
+                        settings: {
+                           slidesToShow: 2,
+                           slidesToScroll: 1,
+                           infinite: true,
+                           dots: false
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                           slidesToShow: 1,
+                           slidesToScroll: 1,
+                           infinite: true,
+                           dots: false
+                        }
+                    },
+                    {
+                        breakpoint: 350,
+                        settings: {
+                           slidesToShow: 1,
+                           slidesToScroll: 1,
+                           infinite: true,
+                           dots: false
+                        }
+                    },
+
+
+                ]
+            });
+
+            count = count + 1;
+
+        }
+    }
+</script>
 
 @endsection

@@ -49,6 +49,8 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+
     <link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet">
 
 
@@ -149,7 +151,7 @@
                 <li id="menu-item"><a href="#contact-us">Contact</a></li>
 
             </ul>
-            <div id="menu">
+            {{-- <div id="menu">
                 @guest
 
                 <a href="{{ route('login') }}"><button type="button" class="btn bt-default"></button></a>
@@ -169,7 +171,7 @@
                     {{ csrf_field() }}
                 </form>
 
-                @endguest</div>
+                @endguest</div> --}}
                     <ul class="nav navbar-nav navbar-right">
                         <span class="login2">
                             <a href="#"><button type="button" class="btn btn-primary">Register</button></a>
@@ -194,28 +196,41 @@
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.1/jquery-migrate.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"  crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <script type="text/javascript">
+   // Test('about-text');
+   // Test('about-text');
+   // Test('about-text');
+   // Test('about-text');
+   // Test('about-text');
+   // Test('about-text');
+   // Test('about-text');
+   //
+   //  function Test(classname){
+   //
+   //       $(document).ready(function() {
+   //           $('.'+classname).waypoint(function(direction) {
+   //               $('.'+classname).addClass('animated zoomIn')
+   //
+   //           }, {
+   //               offset: '70%'
+   //           })
+   //       });
+   //
+   //  }
         $(document).on('click', 'ul li', function() {
             $(this).addClass('active-list').siblings().removeClass('active-list')
         })
     </script>
 
     <script>
-        //  $(document).ready(function() {
-        //      $('.about-container').waypoint(function(direction) {
-        //          $('.about-container').addClass('animated zoomIn')
-        //
-        //     },{
-        //          offset: '600px'
-        //     }
-        // )
-        //  });
+
         $(document).ready(function() {
             $('.about-text').waypoint(function(direction) {
                 $('.about-text').addClass('animated zoomIn')
@@ -224,6 +239,8 @@
                 offset: '70%'
             })
         });
+
+
         $(document).ready(function() {
             $('service-main-image').waypoint(function(direction) {
                 $('service-main-image').addClass('animated zoomIn')
@@ -299,148 +316,22 @@
         });
     </script>
     <script>
-        $(document).ready(function() {
-            $("#toggle2").click(function() {
-                var elem = $("#toggle2").text();
-                if (elem == "Read More") {
-                    //Stuff to do when btn is in the read more state
-                    $("#toggle2").text("Read Less");
-                    $("#text2").slideDown();
-                } else {
-                    //Stuff to do when btn is in the read less state
-                    $("#toggle2").text("Read More");
-                    $("#text2").slideUp();
-                }
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#toggle3").click(function() {
-                var elem = $("#toggle3").text();
-                if (elem == "Read More") {
-                    //Stuff to do when btn is in the read more state
-                    $("#toggle3").text("Read Less");
-                    $("#text3").slideDown();
-                } else {
-                    //Stuff to do when btn is in the read less state
-                    $("#toggle3").text("Read More");
-                    $("#text3").slideUp();
-                }
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#toggle1").click(function() {
-                var elem = $("#toggle1").text();
-                if (elem == "Read More") {
-                    //Stuff to do when btn is in the read more state
-                    $("#toggle1").text("Read Less");
-                    $("#text1").slideDown();
-                } else {
-                    //Stuff to do when btn is in the read less state
-                    $("#toggle1").text("Read More");
-                    $("#text1").slideUp();
-                }
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#toggle4").click(function() {
-                var elem = $("#toggle4").text();
-                if (elem == "Read More") {
-                    //Stuff to do when btn is in the read more state
-                    $("#toggle4").text("Read Less");
-                    $("#text4").slideDown();
-                } else {
-                    //Stuff to do when btn is in the read less state
-                    $("#toggle4").text("Read More");
-                    $("#text4").slideUp();
-                }
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#toggle5").click(function() {
-                var elem = $("#toggle5").text();
-                if (elem == "Read More") {
-                    //Stuff to do when btn is in the read more state
-                    $("#toggle5").text("Read Less");
-                    $("#text5").slideDown();
-                } else {
-                    //Stuff to do when btn is in the read less state
-                    $("#toggle5").text("Read More");
-                    $("#text5").slideUp();
-                }
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#toggle6").click(function() {
-                var elem = $("#toggle6").text();
-                if (elem == "Read More") {
-                    //Stuff to do when btn is in the read more state
-                    $("#toggle6").text("Read Less");
-                    $("#text6").slideDown();
-                } else {
-                    //Stuff to do when btn is in the read less state
-                    $("#toggle6").text("Read More");
-                    $("#text6").slideUp();
-                }
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#toggle8").click(function() {
-                var elem = $("#toggle8").text();
-                if (elem == "Read More") {
-                    //Stuff to do when btn is in the read more state
-                    $("#toggle8").text("Read Less");
-                    $("#text8").slideDown();
-                } else {
-                    //Stuff to do when btn is in the read less state
-                    $("#toggle8").text("Read More");
-                    $("#text8").slideUp();
-                }
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#toggle7").click(function() {
-                var elem = $("#toggle7").text();
-                if (elem == "Read More") {
-                    //Stuff to do when btn is in the read more state
-                    $("#toggle7").text("Read Less");
-                    $("#text7").slideDown();
-                } else {
-                    //Stuff to do when btn is in the read less state
-                    $("#toggle7").text("Read More");
-                    $("#text7").slideUp();
-                }
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#toggle9").click(function() {
-                var elem = $("#toggle9").text();
-                if (elem == "Read More") {
-                    //Stuff to do when btn is in the read more state
-                    $("#toggle9").text("Read Less");
-                    $("#text9").slideDown();
-                } else {
-                    //Stuff to do when btn is in the read less state
-                    $("#toggle9").text("Read More");
-                    $("#text9").slideUp();
-                }
-            });
-        });
+
+    function ReadMore(number){
+
+             var elem = $("#toggle"+number).text();
+             if (elem == "Read More") {
+                 //Stuff to do when btn is in the read more state
+                 $("#toggle"+number).text("Read Less");
+                 $("#text"+number).slideDown();
+             } else {
+                 //Stuff to do when btn is in the read less state
+                 $("#toggle"+number).text("Read More");
+                 $("#text"+number).slideUp();
+             }
+
+    }
+
     </script>
 
     <script>
@@ -459,6 +350,7 @@
             });
         });
     </script>
+
     <script>
         $(document).ready(function() {
             $('.floatingButton').on('click',
@@ -501,166 +393,105 @@
         });
     </script>
     <script>
-        $(".tab-panels .tabs li").on("click", function() {
-            //this is done for scalability in case we want to add another div.tabs-panels
-            var $panel = $(this).closest(".tab-panels");
-            $panel.find(".tabs li.active").removeClass("active");
-            $(this).addClass("active");
-            //Figure out which panel to show
-            var panelToShow = $(this).attr("rel");
-            //hide current panel
-            $panel.find(".panel.active").toggle(0, showNextPanel);
-
-            function showNextPanel() {
-                $(this).removeClass("active");
-                //show new panel
-                $("#" + panelToShow).toggle(0, function() {
-                    $(this).addClass("active");
-                });
-            }
-            $(document).ready(function() {
-                $(".SlickCarousel").not('.slick-initialized').slick({
-                    rtl: false, // If RTL Make it true & .slick-slide{float:right;}
-                    autoplay: true,
-                    autoplaySpeed: 5000, //  Slide Delay
-                    speed: 500, // Transition Speed
-                    slidesToShow: 3, // Number Of Carousel
-                    slidesToScroll: 3, // Slide To Move
-                    pauseOnHover: false,
-                    appendArrows: $(".Container .Head .Arrows"), // Class For Arrows Buttons
-                    prevArrow: '<span class="Slick-Prev"></span>',
-                    nextArrow: '<span class="Slick-Next"></span>',
-                    easing: "linear",
-                    responsive: [{
-                        breakpoint: 801,
-                        settings: {
-                            autoplay: true,
-                            autoplaySpeed: 5000, //  Slide Delay
-                            speed: 500,
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                        }
-                    }, {
-                        breakpoint: 641,
-                        settings: {
-                            autoplay: true,
-                            autoplaySpeed: 5000, //  Slide Delay
-                            speed: 500,
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                        }
-                    }, {
-                        breakpoint: 481,
-                        settings: {
-                            autoplay: true,
-                            autoplaySpeed: 5000, //  Slide Delay
-                            speed: 500,
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                        }
-                    }, ],
-                })
-            });
-            $(document).ready(function() {
-                $(".SlickCarousel2").not('.slick-initialized').slick({
-                    rtl: false, // If RTL Make it true & .slick-slide{float:right;}
-                    autoplay: true,
-                    autoplaySpeed: 6000, //  Slide Delay
-                    speed: 500, // Transition Speed
-                    slidesToShow: 3, // Number Of Carousel
-                    slidesToScroll: 3, // Slide To Move
-                    pauseOnHover: false,
-                    appendArrows: $(".Container2 .Head2 .Arrows2"), // Class For Arrows Buttons
-                    prevArrow: '<span class="Slick-Prev2"></span>',
-                    nextArrow: '<span class="Slick-Next2"></span>',
-                    easing: "linear",
-                    responsive: [{
-                        breakpoint: 801,
-                        settings: {
-                            autoplay: true,
-                            autoplaySpeed: 6000, //  Slide Delay
-                            speed: 500,
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                        }
-                    }, {
-                        breakpoint: 641,
-                        settings: {
-                            autoplay: true,
-                            autoplaySpeed: 6000, //  Slide Delay
-                            speed: 500,
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                        }
-                    }, {
-                        breakpoint: 481,
-                        settings: {
-                            autoplay: true,
-                            autoplaySpeed: 6000, //  Slide Delay
-                            speed: 500,
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                        }
-                    }, ],
-                })
-            });
-        });
+        // $(".tab-panels .tabs li").on("click", function() {
+        //     //this is done for scalability in case we want to add another div.tabs-panels
+        //     var $panel = $(this).closest(".tab-panels");
+        //     $panel.find(".tabs li.active").removeClass("active");
+        //     $(this).addClass("active");
+        //     //Figure out which panel to show
+        //     var panelToShow = $(this).attr("rel");
+        //     //hide current panel
+        //     $panel.find(".panel.active").toggle(0, showNextPanel);
+        //
+        //     function showNextPanel() {
+        //         $(this).removeClass("active");
+        //         //show new panel
+        //         $("#" + panelToShow).toggle(0, function() {
+        //             $(this).addClass("active");
+        //         });
+        //     }
+        //
+        //
+        //    });
     </script>
+
     <script>
-        $('.custom-slider').not('.slick-initialized').slick({
-            slidesToShow: 5,
-            slidesToScroll: 3,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            responsive: [{
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: false
-                    }
-                },
-                {
-                    breakpoint: 900,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: false
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: false
-                    }
-                },
-                {
-                    breakpoint: 350,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: false
-                    }
-                },
-                // {
-                //       breakpoint: 400,
-                //       settings: {
-                //         slidesToShow: 1,
-                //         slidesToScroll: 1,
-                //         infinite: true,
-                //         dots: false
-                //       }
-                //     }
-
-            ]
+     window.fbAsyncInit = function() {
+        FB.init({
+         xfbml            : true,
+         version          : 'v8.0'
         });
-    </script>
+     };
+
+     (function(d, s, id) {
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) return;
+     js = d.createElement(s); js.id = id;
+     js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+     fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <script>
+    $('.custom-slider').not('.slick-initialized').slick({
+      slidesToShow: 5,
+      slidesToScroll: 2,
+      autoplay: true,
+      arrows:true,
+        pauseOnHover:true,
+        pauseOnFocus:false,
+       easing: "linear",
+      autoplaySpeed: 2000,
+      accessibility:false,
+
+      responsive: [{
+              breakpoint: 1200,
+              settings: {
+                   slidesToShow: 4,
+                   slidesToScroll: 1,
+                   infinite: true,
+                   dots: false
+              }
+          },
+          {
+              breakpoint: 900,
+              settings: {
+                   slidesToShow: 3,
+                   slidesToScroll: 1,
+                   infinite: true,
+                   dots: false
+              }
+          },
+          {
+              breakpoint: 600,
+              settings: {
+                   slidesToShow: 2,
+                   slidesToScroll: 1,
+                   infinite: true,
+                   dots: false
+              }
+          },
+          {
+              breakpoint: 350,
+              settings: {
+                   slidesToShow: 2,
+                   slidesToScroll: 1,
+                   infinite: true,
+                   dots: false
+              }
+          },
+          // {
+          //       breakpoint: 400,
+          //       settings: {
+          //         slidesToShow: 1,
+          //         slidesToScroll: 1,
+          //         infinite: true,
+          //         dots: false
+          //       }
+          //     }
+
+      ]
+   });
+</script>
     <script>
         $(function() {
             /** -----------------------------------------
@@ -873,26 +704,17 @@
 
         });
     </script>
+    <script>
+    $(document).ready(function() {
 
-    {{-- <script>
-               $(document).ready(function(){
+       setTimeout(function(){
+           $('#panel3').addClass('Container');
+       }, 3000);
 
-                  $("#testimonial-slider").owlCarousel({
-                       items:2,
-                       itemsDesktop:[1000,2],
-                       itemsDesktopSmall:[990,2],
-                       itemsTablet:[768,1],
-                       pagination:true,
-                       navigation:false,
-                       navigationText:["",""],
-                       slideSpeed:1000,
-                       autoPlay:true
-                  });
+   });
+</script>
 
 
-
-               });
-           </script> --}}
 
     @yield('js')
 </body>

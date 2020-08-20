@@ -20,6 +20,16 @@ function team(){
   return $team=DB::table('team')->orderBy('order','ASC')->get();
 
 }
+function Changei(){
+
+  return $team=DB::table('changei')->get();
+
+}
+function Change(){
+
+  return $team=DB::table('change')->orderBy('order','ASC')->get();
+
+}
 function Bg(){
 
   return $team=DB::table('bg')->get();
@@ -28,6 +38,36 @@ function Bg(){
 function Users(){
 
   return $users=DB::table('user_details')->where('deleted_at',null)->get();
+
+}
+function Group1(){
+
+  return $users=DB::table('group1')->where('deleted_at',null)->get();
+
+}
+function Group2(){
+
+  return $users=DB::table('group2')->where('deleted_at',null)->get();
+
+}
+function Group3(){
+
+  return $users=DB::table('group3')->where('deleted_at',null)->get();
+
+}
+function Group4(){
+
+  return $users=DB::table('group4')->where('deleted_at',null)->get();
+
+}
+function Group5(){
+
+  return $users=DB::table('group5')->where('deleted_at',null)->get();
+
+}
+function Group6(){
+
+  return $users=DB::table('group6')->where('deleted_at',null)->get();
 
 }
 function Emaild(){
