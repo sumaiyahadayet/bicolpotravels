@@ -15,6 +15,11 @@
   return $banner=DB::table('banner')->orderBy('order','ASC')->get();
 
 }
+function News(){
+
+ return $banner=DB::table('news')->orderBy('created_at','DESC')->get();
+
+}
 function team(){
 
   return $team=DB::table('team')->orderBy('order','ASC')->get();
@@ -37,7 +42,7 @@ function Bg(){
 }
 function Users(){
 
-  return $users=DB::table('user_details')->where('deleted_at',null)->get();
+  return $users=DB::table('user_details')->orderBy('email','ASC')->where('deleted_at',null)->get();
 
 }
 function Group1(){

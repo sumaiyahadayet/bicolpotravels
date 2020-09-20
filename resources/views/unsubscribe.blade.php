@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-      <title>Bicolpo Travels | Admin</title>
+      <title>Bicolpo Travels | A Different Feel</title>
       <link rel="icon" href="{{asset('assets/images/title-logo.png')}}" type="image/icon">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
@@ -22,7 +22,7 @@
   * {
     font-family: 'Raleway', sans-serif;
   }
-  
+
   a {
     color: #fff;
     -webkit-transition: 0.3s;

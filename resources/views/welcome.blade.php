@@ -206,13 +206,13 @@
     <div class="change-button">
         <a href="#" style="font-size:18px;"> Learn More</a>
 
-        <a href="#" style=""class="btn animated-button1" data-toggle="modal" data-target=".bd-example-modal-lg">
+        <a href="#" style="" class="btn animated-button1" data-toggle="modal" data-target=".bd-example-modal-lg">
 
-             <span></span>
-               <span></span>
-               <span></span>
-               <span></span>
-               Change Now
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Change Now
         </a>
     </div>
     @foreach(Changei() as $changei)
@@ -393,6 +393,89 @@
 <div class="row ">
 
     <div class="col-md-12">
+        <h1 class="text-center"><a class="underline">Latest News</a></h1>
+
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row news">
+        <div class="news-list">
+            @php
+            $serial=0;
+            @endphp
+            @foreach (News() as $news)
+            @php
+            $serial++;
+            // Assuming the above tags are at www.example.com
+            // $tags = get_meta_tags('');
+
+
+
+            @endphp
+
+
+            <div class="newz">
+                <div class="col-lg-4 ">
+                    <div class="ProductBlock">
+                        <section class="Content">
+                            <a href="/news/{{$news->id}}" target="_blank">
+                                <h3>
+                                    <div class="img-fill" onload="myFunction()">
+
+                                        <img src="{{asset($news->image)}}" alt="assets/images/loader.gif">
+                                    </div>
+
+                                    <strong> {{ Illuminate\Support\Str::limit($news->title, 90) }}</strong>
+                                </h3>
+                            </a>
+                        </section>
+                    </div>
+
+                </div>
+            </div>
+            @endforeach
+
+
+            {{-- @foreach (News() as $news)
+@if($news->active==2)
+    <span id="text0">
+
+        <div class="col-lg-4 ">
+            <div class="ProductBlock">
+                <div class="Content">
+                    <a href="{{asset($news->link)}}">
+            <h3>
+                <div class="img-fill" onload="myFunction()">
+
+                    <img src="{{asset($news->image)}}" alt="assets/images/loader.gif">
+                </div>
+
+                <strong>{{$title}}</strong>
+            </h3>
+            </a>
+        </div>
+    </div>
+
+</div>
+</span>
+@endif
+@endforeach --}}
+
+</div>
+
+</div>
+@if ($serial>3)
+
+<br>
+<button class="read-more-button2" onclick="LoadMore()" style="margin:0px auto; display:table;">View More</button>
+
+@endif
+</div>
+<br>
+<div class="row ">
+
+    <div class="col-md-12">
         <h1 class="text-center"><a class="underline">Latest Offers and Events</a></h1>
 
     </div>
@@ -517,7 +600,8 @@
             <h3 class="text-center"> WELCOME TO BICOLPO TRAVELS</h3>
             <p class="about-text" align="center" class="font-family-alt letter-spacing-1 margin-3 no-margin-bottom no-margin-rl text-gray-light-2 xs-text-small text">Why do you need the services of a Travel Agency?</p>
             <p class="about-text" align="justify" class="font-family-alt letter-spacing-1 margin-3 no-margin-bottom no-margin-rl text-gray-light-2 xs-text-large text-extra-large text-titlecase">
-                There are a number of choices, decisions and details involved in each and every trip you make. If you miss one detail it can cause your dream trip to turn into a disaster. As travel professionals, we have the expertise to take care of
+                There are a number of choices, decisions and details involved in each and every trip you make. If you miss one detail it can cause your dream trip to turn into a disaster. As travel professionals, we have the expertise to take
+                care of
                 every aspect of your travel need.</p>
 
             <p class="about-text"> Here are some more reasons for you to choose BICOLPO TRAVELS:</p>
@@ -525,13 +609,16 @@
             <p class="about-text" align="justify">
                 As your first resource in travel We offer the lowest fares anywhere. We search for the lowest fares through our Reservations system and guarantee the lowest fare for your journey.</p>
             <span id="text">
-                <p class="about-text" align="justify">Stop searching the Internet and making a call for cheap fares. Call us and let us take care of all your needs with the reservations, fares, ticketing, seat assignments, itinerary changes and other
-                    things that which would take a lot of your important time. As you are aware airlines change their fares continuously everyday and there is no way to guarantee a fare unless you book it. Also there are lists of rules for each and
+                <p class="about-text" align="justify">Stop searching the Internet and making a call for cheap fares. Call us and let us take care of all your needs with the reservations, fares, ticketing, seat assignments, itinerary changes and
+                    other
+                    things that which would take a lot of your important time. As you are aware airlines change their fares continuously everyday and there is no way to guarantee a fare unless you book it. Also there are lists of rules for each
+                    and
                     every fare out there. Understanding these rules is very complex. we have experts who can take care of all that for you and take away your worries and stress.</p>
 
                 <h3 class="text-left"> WHO WE ARE? </h3>
                 <p class="about-text" align="justify">
-                    BICOLPO TRAVELS was incorporated in 2009 in Bangladesh. The Company is one of the fast growing & profitable travel company in Bangladesh and our different think with online space driven by technology, better buying due to total
+                    BICOLPO TRAVELS was incorporated in 2009 in Bangladesh. The Company is one of the fast growing & profitable travel company in Bangladesh and our different think with online space driven by technology, better buying due to
+                    total
                     volume & forward cash flows. The Company is a leading distributor of transportation ticketing, accommodation reservation, packaged tours, corporate travel management, travel ancillaries, retail and financial services. BICOLPO
                     TRAVEL offers a comprehensive suite of travel & retail products and growing set of financial services products, provided by many suppliers on the different platform. <br>
 
@@ -540,7 +627,8 @@
                     Traveling is a very simple thing; there is no need to worry about it
 
                     We make selling very easy.
-                    We started with the premise of selling travel, not necessarily under our brand, but to everyone through our partners, world class travel products and services in every neighborhood and deliver great customer service. We serve a
+                    We started with the premise of selling travel, not necessarily under our brand, but to everyone through our partners, world class travel products and services in every neighborhood and deliver great customer service. We serve
+                    a
                     lot of customers that walk into our outlets every day that you can practically find in your neighborhood. We are the Inside Of the Travel World.
                     Dedicated customer support.
                     NO customer calls when all is well. We believe customer service starts with listening to the customer, owning what is wrong and then going out of your way to fix it. That's it, it does not mean, large call centers flooded with
@@ -548,7 +636,8 @@
 
                     We believe that the only way to succeed is to be the best and aim for being the best. We cultivate a culture where our people are groomed to be leaders in their work areas and create future leaders..
 
-                    In a service business, we know that without dedicated, talented and thoughtful people, we cannot be the firm we aspire to be. Our principal assets are our people, capital and reputation. We are committed to maintaining a culture
+                    In a service business, we know that without dedicated, talented and thoughtful people, we cannot be the firm we aspire to be. Our principal assets are our people, capital and reputation. We are committed to maintaining a
+                    culture
                     of diversity, integrity and strong business principles.</p>
             </span>
 
@@ -824,7 +913,13 @@
 
     </div>
 </div>
+
+
+
+
 <div class="payment">
+
+
     <h2 class="text-center"> Payment Channels</h2>
 
     <img class="payment-image-big" src="{{asset('assets/images/payment-channel.png')}}" alt="Los Angeles" style="width:800px;height:auto;">
@@ -837,72 +932,75 @@
         <a href="">About Us</a> | <a href=""> Privacy Policy </a> | <a href=""> Terms and Conditions </a> | <a href=""> Disclaimer Policy</a> | <a href=""> Payment and Refund Policy</a> |<a href=""> FAQ</a>
     </div>
 </div>
-<div class="modal fade bd-example-modal-lg"id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
+<div class="modal fade bd-example-modal-lg" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
 
-      <div class="modal-header">
-           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-             <span aria-hidden="true" style="font-size:50px;">&times;</span>
-           </button>
-           <img src="{{asset('assets/images/plane.gif')}}" style="height:200px; width:auto;">
-        <h5 class="modal-title text-center" id="exampleModalLabel">! THANK YOU FOR CHOOSING US !<br>
-             Change your Ticket with easy 04 steps
-</h5><br>
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" style="font-size:50px;">&times;</span>
+                </button>
+                <img src="{{asset('assets/images/plane.gif')}}" style="height:200px; width:auto;">
+                <h5 class="modal-title text-center" id="exampleModalLabel">! THANK YOU FOR CHOOSING US !<br>
+                    Change your Ticket with easy 04 steps
+                </h5><br>
 
-<p class="text-center">Currently for any kind of changes send us your Ticket, Passport and Visa copy with expected Date at below emails. . </p>
-<div class="modal-mail">
-<a href="mailto:sales@bicolpotravels.com" class="text-center">sales@bicolpotravels.com</a><br>
-<span class="text-center">or </span><br>
-<a href="mailto:bcbd14@gmail.com"class="text-center">bcbd14@gmail.com</a>
-</div>
-      </div>
-      <div class="modal-body">
-           <div id="main-container">
-          <dl>
-            <dt class="done-item"></dt>
-            <dd class="done-item-text">
-              <h2>Step 1</h2>
-              <p>Attach your ticket, passport and visa on email, mention expected Date on email subject field, then send it to above email address.
-</p>
-            </dd>
-            <dt class="done-item"></dt>
-            <dd class="done-item-text">
-              <h2>Step 2</h2>
-              <p>Within 01 to 24 hours you will get replay of your email with available possible date and exact Fare how much you have to pay.</p>
-            </dd>
-            <dt class="done-item"></dt>
-            <dd class="done-item-text">
-              <h2>Step 3</h2>
-              <p>If you Agree with Date and Fares Just replay on the same email as like ”I am Agree Please Confirm ……Date”,
-</p>
-            </dd>
-            <dt class="done-item"></dt>
-            <dd class="done-item-text">
-              <h2>Step 4</h2>
-              <p>If Balance available on your ledger you will get reissuance within few min/hours. If not available balance we will send a link for payment, after successful  payment you will get your service on the same email.
-<br>
-<br>Any further Assistance don’t hesitate to call us @ +8801718128917,   Whatsapp: +8801718128917, also can contact with chat option on our website</p>
-            </dd>
-              </div>
+                <p class="text-center">Currently for any kind of changes send us your Ticket, Passport and Visa copy with expected Date at below emails. . </p>
+                <div class="modal-mail">
+                    <a href="mailto:sales@bicolpotravels.com" class="text-center">sales@bicolpotravels.com</a><br>
+                        <span class="text-center">or </span><br>
+                        <a href="mailto:bcbd14<blade gmail.com" class="text-center">bcbd14@gmail.com</a> />
+                </div>
+            </div>
+            <div class="modal-body">
+                <div id="main-container">
+                    <dl>
+                        <dt class="done-item"></dt>
+                        <dd class="done-item-text">
+                            <h2>Step 1</h2>
+                            <p>Attach your ticket, passport and visa on email, mention expected Date on email subject field, then send it to above email address.
+                            </p>
+                        </dd>
+                        <dt class="done-item"></dt>
+                        <dd class="done-item-text">
+                            <h2>Step 2</h2>
+                            <p>Within 01 to 24 hours you will get replay of your email with available possible date and exact Fare how much you have to pay.</p>
+                        </dd>
+                        <dt class="done-item"></dt>
+                        <dd class="done-item-text">
+                            <h2>Step 3</h2>
+                            <p>If you Agree with Date and Fares Just replay on the same email as like ”I am Agree Please Confirm ……Date”,
+                            </p>
+                        </dd>
+                        <dt class="done-item"></dt>
+                        <dd class="done-item-text">
+                            <h2>Step 4</h2>
+                            <p>If Balance available on your ledger you will get reissuance within few min/hours. If not available balance we will send a link for payment, after successful payment you will get your service on the same
+                                email.
+                                <br>
+                                <br>Any further Assistance don’t hesitate to call us
+                                @ +8801718128917, Whatsapp: +8801718128917, also can contact with chat option on our website</p>
+                        </dd>
+                </div>
 
-            </dd>
-          </dl>
-          </div>
+                </dd>
+                </dl>
+            </div>
 
-      <div class="modal-footer">
-           <div class="modal-icon float-left">
-<a href="https://www.facebook.com/bicolpotravels" class="fa fa-facebook"></a>
-<a href="https://join.skype.com/invite/P6q9ig1G7KaR" class="fa fa-skype"></a>
-<a href="mailto:sales@bicolpotravels.com" class="fa fa-envelope"></a>
+            <div class="modal-footer">
+                <div class="modal-icon float-left">
+                    <a href="https://www.facebook.com/bicolpotravels" class="fa fa-facebook"></a>
+                    <a href="https://join.skype.com/invite/P6q9ig1G7KaR" class="fa fa-skype"></a>
+                    <a href="mailto:sales@bicolpotravels.com" class="fa fa-envelope"></a>
 
-</div>
-<button  data-dismiss="modal" aria-label="Close" class=" btn btn-default" >Close</button>
+                </div>
+                <button data-dismiss="modal" aria-label="Close" class=" btn btn-default">Close</button>
 
-</div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
+
 <div class="footer">
 
     <div class="row">
@@ -919,11 +1017,9 @@
 <div id="fb-root"></div>
 
 
-     <!-- Your Chat Plugin code -->
-     <div class="fb-customerchat"
-       attribution=setup_tool
-       page_id="231458127041599">
-     </div>
+<!-- Your Chat Plugin code -->
+<div class="fb-customerchat" attribution=setup_tool page_id="231458127041599">
+</div>
 
 <!-- https://codepen.io/vilcu/pen/ZQwdGQ -->
 
@@ -1010,37 +1106,37 @@
                 responsive: [{
                         breakpoint: 1200,
                         settings: {
-                           slidesToShow: 3,
-                           slidesToScroll: 3,
-                           infinite: true,
-                           dots: false
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                            dots: false
                         }
                     },
                     {
                         breakpoint: 900,
                         settings: {
-                           slidesToShow: 2,
-                           slidesToScroll: 1,
-                           infinite: true,
-                           dots: false
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: false
                         }
                     },
                     {
                         breakpoint: 600,
                         settings: {
-                           slidesToShow: 1,
-                           slidesToScroll: 1,
-                           infinite: true,
-                           dots: false
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: false
                         }
                     },
                     {
                         breakpoint: 350,
                         settings: {
-                           slidesToShow: 1,
-                           slidesToScroll: 1,
-                           infinite: true,
-                           dots: false
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: false
                         }
                     },
 
@@ -1053,5 +1149,33 @@
         }
     }
 </script>
+<script>
+    function LoadMore() {
+        var elem = $(".read-more-button2").text();
+        if (elem == "View More") {
+            //Stuff to do when btn is in the read more state
+            $(".read-more-button2").text("View Less");
 
+        } else {
+            //Stuff to do when btn is in the read less state
+            $(".read-more-button2").text("View More");
+
+        }
+
+        $('.news-list').toggleClass('view-more');
+
+        var class_name = $('.news-list').attr('class');
+
+        if (class_name == '.news-list') {
+
+            $('.read-more-button2').html("View  More");
+
+        } else {
+
+            $('read-more-button2').html("View  Less");
+
+        }
+
+    }
+</script>
 @endsection

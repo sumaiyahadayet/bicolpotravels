@@ -747,93 +747,7 @@
             </div><!-- /.team -->
         </div>
         @endforeach
-        {{-- <div class="col-md-4 col-sm-4">
-            <div class="team">
-                <div class="team-image">
 
-                    <img src="{{asset('assets/images/profile-avater.png')}}" class="img-circle img-responsive">
-
-
-    </div><!-- /.team-image -->
-    <div class="team-content">
-        <div class="team-name text-center"><a href="#">
-                <h5>Jose Knutson</h5>
-            </a></div>
-        <div class="team-role text-center">Co-founder</div>
-
-    </div><!-- /.team-content -->
-</div><!-- /.team -->
-</div>
-<div class="col-md-4 col-sm-4">
-    <div class="team">
-        <div class="team-image">
-
-            <img src="{{asset('assets/images/profile-avater.png')}}" class="img-circle img-responsive">
-
-
-        </div><!-- /.team-image -->
-        <div class="team-content">
-            <div class="team-name text-center"><a href="#">
-                    <h5>Jose Knutson</h5>
-                </a></div>
-            <div class="team-role text-center">Co-founder</div>
-
-        </div><!-- /.team-content -->
-    </div><!-- /.team -->
-</div>
-</div>
-<div class="row title-gap">
-    <div class="col-md-4 col-sm-4">
-        <div class="team">
-            <div class="team-image">
-
-                <img src="{{asset('assets/images/profile-avater.png')}}" class="img-circle img-responsive">
-
-
-            </div><!-- /.team-image -->
-            <div class="team-content">
-                <div class="team-name text-center"><a href="#">
-                        <h5>Jose Knutson</h5>
-                    </a></div>
-                <div class="team-role text-center">Co-founder</div>
-
-            </div><!-- /.team-content -->
-        </div><!-- /.team -->
-    </div>
-    <div class="col-md-4 col-sm-4">
-        <div class="team">
-            <div class="team-image">
-
-                <img src="{{asset('assets/images/profile-avater.png')}}" class="img-circle img-responsive">
-
-
-            </div><!-- /.team-image -->
-            <div class="team-content">
-                <div class="team-name text-center"><a href="#">
-                        <h5>Jose Knutson</h5>
-                    </a></div>
-                <div class="team-role text-center">Co-founder</div>
-
-            </div><!-- /.team-content -->
-        </div><!-- /.team -->
-    </div>
-    <div class="col-md-4 col-sm-4">
-        <div class="team">
-            <div class="team-image">
-
-                <img src="{{asset('assets/images/profile-avater.png')}}" class="img-circle img-responsive">
-
-
-            </div><!-- /.team-image -->
-            <div class="team-content">
-                <div class="team-name text-center"><a href="#">
-                        <h5>Jose Knutson</h5>
-                    </a></div>
-                <div class="team-role text-center">Co-founder</div>
-
-            </div><!-- /.team-content -->
-        </div><!-- /.team -->
-    </div>--}}
 </div>
 </div>
 <br>
@@ -1010,6 +924,15 @@
         <a href="">About Us</a> | <a href=""> Privacy Policy </a> | <a href=""> Terms and Conditions </a> | <a href=""> Disclaimer Policy</a> | <a href=""> Payment and Refund Policy</a> |<a href=""> FAQ</a>
     </div>
 </div>
+<div class="custom-slider">
+
+
+
+  <div class="custom-box">
+      <iframe src="https://www.aviationnewsbd.com/%e0%a6%ac%e0%a6%9b%e0%a6%b0%e0%a7%87%e0%a6%b0-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a5%e0%a6%ae%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%a7%e0%a7%87-%e0%a6%a8%e0%a6%b0%e0%a6%93%e0%a7%9f%e0%a7%87%e0%a6%9c%e0%a6%bf/" ></iframe>
+</a>
+  </div>
+ </div>
 <div class="footer">
 
     <div class="row">

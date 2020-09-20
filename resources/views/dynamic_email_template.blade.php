@@ -176,7 +176,7 @@
 
                                 <img src="{{asset('assets/images/bicolpo-logo-transparent.png')}}" width="15%" height=auto; alt="alt_text" border="0" style="display:flex;">
                               <p class="logop" style="text-align :center;  margin-left:350px; font-size:20px;"> <strong> Bicolpo Travels<br>
-                                   <i style="font-family:initial;display: block;  padding-top:18px; font-size:18px;"> A Different Feel</i></strong></p>
+                                   <i style="font-family:initial;display: block;  padding-top:18px; "> A Different Feel</i></strong></p>
                             </td>
                         </tr>
                     </table>
@@ -321,7 +321,7 @@
                             <td style="padding: 10px 10px;width: 100%;font-size: 12px; font-family: sans-serif; mso-height-rule: exactly; line-height:18px; text-align: center; color: #ffffff;">
                                 <span class="mobile-link--footer">Copyright &copy; {{date('Y')}} Bicolpo Travels. All rights reserved.<br>If you don't want this type of emails</span> <br>
                                 <br>
-                              <a href="http://bicolpotravels.com/admin/sendemail/delete-user/{{$user->id}}" style="color:#ffffff!important;"  ><unsubscribe style="color:#ffffff!important; text-decoration:underline; ">Unsubscribe</unsubscribe></a>
+                              <a href="http://bicolpotravels.com/admin/sendemail/delete-user/{{$user->email}}" style="color:#ffffff!important;"  ><unsubscribe style="color:#ffffff!important; text-decoration:underline; ">Unsubscribe</unsubscribe></a>
                             </td>
                         </tr>
                     </table>

@@ -26,12 +26,30 @@ class Sendmail2Controller extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-        public function Delete($id){
+        public function Delete($email){
 
-      DB::table('user_details')->where('id',$id)->delete();
+      DB::table('user_details')->where('email',$email)->delete();
 
-              return view('unsubscribe')->with('success', 'successfully unsubscribed');
 
+
+                    DB::table('group1')->where('email',$email)->delete();
+
+
+                            DB::table('group2')->where('email',$email)->delete();
+
+
+                                   DB::table('group3')->where('email',$email)->delete();
+
+
+                                           DB::table('group4')->where('email',$email)->delete();
+
+
+                                                   DB::table('group5')->where('email',$email)->delete();
+
+
+                                                          DB::table('group6')->where('email',$email)->delete();
+
+                                                                 return view('unsubscribe')->with('success', 'successfully unsubscribed');
         }
 
 }

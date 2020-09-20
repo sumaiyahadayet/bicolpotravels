@@ -54,7 +54,7 @@
 <!-- begin:: Content Head -->
 <div class="kt-subheader   kt-grid__item d-print-none" id="kt_subheader">
     <div class="kt-subheader__main">
-        <h3 class="kt-subheader__title">Public Group</h3>
+        <h3 class="kt-subheader__title">News</h3>
 
         <span class="kt-subheader__separator kt-subheader__separator--v"></span>
 
@@ -87,25 +87,7 @@
     align-items: center;
     margin-top: 10px;
 ">
-<div class="row align-items-center"style="
-float: right;
-display: inline-block;
-align-items: center;
-margin: 10px;
-">
-    <div class="col-xl-12 order-2 order-xl-1">
-       <div class="row align-items-center">
-              <div class="col-md-12 kt-margin-b-20-tablet-and-mobile">
-                   <div class="kt-input-icon kt-input-icon--left">
-                        <input type="text" class="form-control" placeholder="Search..." id="generalSearch">
-                        <span class="kt-input-icon__icon kt-input-icon__icon--left">
-                             <span><i class="la la-search"></i></span>
-                        </span>
-                   </div>
-              </div>
-       </div>
-    </div>
-</div>
+
         <div class="kt-portlet__head-toolbar" style="
         float: right;
         display: inline-block;
@@ -116,7 +98,7 @@ margin: 10px;
                 <div class="kt-portlet__head-actions">
 
                     <div class="dropdown dropdown-inline">
-                        <a href="{{route('add-group1')}}" class="btn btn-success btn-icon-sm ">
+                        <a href="{{route('add-news')}}" class="btn btn-success btn-icon-sm ">
                             <i class="la la-plus"></i>
                             New Data
                         </a>
@@ -156,19 +138,19 @@ margin: 10px;
                 <tr>
                     <th title="Field #1">Serial</th>
 
-                    <th title="Field #5" class="kt-datatable__cell kt-datatable__cell--sort">Name</th>
-                    <th title="Field #3">Email</th>
-
+                    <th title="Field #5" class="kt-datatable__cell kt-datatable__cell--sort">Image</th>
+                    <th title="Field #3">Title</th>
+                    <th title="Field #4">Description 1st p</th>
+                    <th title="Field #4">Description 2nd p</th>
                     <th  title="Field #8">Actions</th>
-                    <th  title="Field #8">Created_at</th>
-
+                    <th title="Field #5">Created At</th>
                 </tr>
             </thead>
             <tbody>
               @php
                 $serial=0;
               @endphp
-                @foreach($data as $user)
+                @foreach($data as $news)
                   @php
                     $serial++;
                   @endphp
@@ -176,15 +158,17 @@ margin: 10px;
 
                     <td>{{$serial}}</td>
 
-
-                    <td>{{$user->name}}</td>
-                    <td>{{$user->email}}</td>
-
                     <td>
-                     <a href="/admin/edit-group1/{{$user->id}}" class="edit"><i class="la la-edit" data-toggle="tooltip" title="Edit"></i></a>
-                     <a href="/admin/delete-group1/{{$user->id}}" class="delete"> <i class="la la-trash" data-toggle="tooltip" title="Delete"></i> </a>
+                        <img src="{{asset($news->image)}}" style="height:80px;width:auto" alt="">
                     </td>
-
+                    <td>{{$news->title}}</td>
+                    <td ><span style="height: 150px;">{{$news->description}}</span></td>
+<td ><span style="height: 150px;">{{$news->description2}}</span></td>
+                    <td>
+                     <a href="/admin/edit-news/{{$news->id}}" class="edit"><i class="la la-edit" data-toggle="tooltip" title="Edit"></i></a>
+                     <a href="/admin/delete-news/{{$news->id}}" class="delete"> <i class="la la-trash" data-toggle="tooltip" title="Delete"></i> </a>
+                    </td>
+                    <td>{{$news->created_at}}</td>
 
                 </tr>
                 @endforeach

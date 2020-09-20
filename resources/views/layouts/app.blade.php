@@ -350,7 +350,22 @@
             });
         });
     </script>
-
+    <script>
+        $(document).ready(function() {
+            $("#toggle0").click(function() {
+                var elem = $("#toggle0").text();
+                if (elem == "See More") {
+                    //Stuff to do when btn is in the read more state
+                    $("#toggle0").text("See Less");
+                    $("#text0").slideDown();
+                } else {
+                    //Stuff to do when btn is in the read less state
+                    $("#toggle0").text("See More");
+                    $("#text0").slideUp();
+                }
+            });
+        });
+    </script>
     <script>
         $(document).ready(function() {
             $('.floatingButton').on('click',

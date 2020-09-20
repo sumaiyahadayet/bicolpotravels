@@ -79,12 +79,15 @@ Route::get('/admin/changei', function () {
 Route::get('/admin/emaild', function () {
     return view('admin.emaild.index');
 })->name('emaild');
+Route::get('/admin/news', function () {
+    return view('admin.news.index');
+})->name('news');
 Route::get('/admin/user_details', function () {
     return view('admin.user_details.index');
 })->name('user_details');
 Route::get('admin/sendemail', 'SendmailController@index')->name('sendemail');;
 Route::post('admin/sendemail/send', 'SendmailController@send');
-Route::get('admin/sendemail/delete-user/{id}', 'Sendmail2Controller@Delete')->name('dalete-user');
+Route::get('admin/sendemail/delete-user/{email}', 'Sendmail2Controller@Delete')->name('dalete-user');
 
 Route::get('/insert-email', 'Controller@InsertEmail')->name('insert-email');
 Route::get('/home', 'HomeController@index')->name('home');
@@ -267,3 +270,11 @@ Route::post('/admin/add-group6', 'Group6Controller@AddGroup6')->name('submit-add
 Route::get('/admin/edit-group6/{id}', 'Group6Controller@Edit')->name('edit-group6');
 Route::post('/admin/update-group6', 'Group6Controller@Update')->name('update-group6');
 Route::get('/admin/delete-group6/{id}', 'Group6Controller@Delete')->name('dalete-group6');
+
+Route::get('/admin/news', 'NewsController@index')->name('news');
+Route::get('/news/{id}', 'NewzController@Newz')->name('newz');
+Route::get('/admin/add-news', 'NewsController@AddView')->name('add-news');
+Route::post('/admin/add-news', 'NewsController@AddNews')->name('submit-add-news');
+Route::get('/admin/edit-news/{id}', 'NewsController@Edit')->name('edit-news');
+Route::post('/admin/update-news', 'NewsController@Update')->name('update-news');
+Route::get('/admin/delete-news/{id}', 'NewsController@Delete')->name('dalete-news');
